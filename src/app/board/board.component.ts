@@ -1,3 +1,4 @@
+import rightClick from 'angular-right-click';
 import { Component, OnInit } from '@angular/core';
 import { Board } from '../board.model';
 import { Tile} from '../tile.model';
@@ -13,6 +14,7 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(rightClick);
     this.board = new Board (8, 8, 10);
     this.board.makeBoard();
   }
@@ -23,6 +25,10 @@ export class BoardComponent implements OnInit {
     }else {
       this.board.checkMines(cell);
     }
+  }
+
+  newGame(){
+    location.reload();
   }
 
 }

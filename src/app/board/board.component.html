@@ -5,4 +5,7 @@
    </tr>
 </table>
 
-<h2 *ngIf="gameOver">You lost!</h2>
+<div *ngIf="gameOver">
+  <h2 >You lost!</h2>
+  <button type="button" (click)="newGame()">New Game</button>
+</div>
