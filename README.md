@@ -1,7 +1,18 @@
 # Minesweeper
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+### Description
 
+This app is an attempt at recreating the classic game _minesweeper_.  The user must clear a board of tiles without clicking on a mine.  The initial mvp will just be an 8x8 grid of tiles; tiles will be clickable objects.  Further implementation could possibly add bigger boards.
+
+### Checklist
+
+  * Build board
+  * Check for mine/ number
+  * If # check for mines nearby
+  * Right click to mark mines
+  * Clicking a mine ends the game
+  * game timer
 
 
 ## Development server
