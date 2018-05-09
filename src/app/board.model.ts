@@ -1,3 +1,5 @@
+import { Tile } from './tile.model';
+
 export class Board {
   boardArray = [];
   constructor(public width: number, public height: number, public mines: number) {}
@@ -12,18 +14,20 @@ export class Board {
     for( let i = 1; i<= numbers; i++){
       options.push(1);
     }
-    console.log(options);
     let temp = [];
+    let row = 0;
     let length = options.length;
     for( let i = 0; i< length; i++){
       let index = Math.floor(Math.random()* options.length);
-      temp.push(options[index]);
+      let tile = new Tile([row, temp.length], options[index]);
+      temp.push(tile);
       options.splice(index, 1);
       if(temp.length === this.width){
         this.boardArray.push(temp);
         temp = [];
-        console.log(this.boardArray);
+        row += 1;
       }
     }
+    console.log(this.boardArray);
   }
 }

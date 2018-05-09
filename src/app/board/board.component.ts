@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Board } from '../board.model';
+import { Tile} from '../tile.model';
 
 @Component({
   selector: 'app-board',
@@ -8,11 +9,20 @@ import { Board } from '../board.model';
 })
 export class BoardComponent implements OnInit {
   board: Board;
+  gameOver: boolean = false;
   constructor() { }
 
   ngOnInit() {
     this.board = new Board (8, 8, 10);
     this.board.makeBoard();
+  }
+
+  checkCell(cell: Tile) {
+    if(cell.value === 0){
+      this.gameOver = true;
+    }else {
+      this.board.checkMines(cell);
+    }
   }
 
 }
