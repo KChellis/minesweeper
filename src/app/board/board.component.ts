@@ -60,6 +60,8 @@ export class BoardComponent implements OnInit {
     this.gameOver = false;
     this.gameWin = false;
     this.time = 0;
+    this.startTime = true;
+    clearInterval(this.timeInterval);
 
   }
 
@@ -67,7 +69,7 @@ export class BoardComponent implements OnInit {
   checkCell(cell: Tile) {
     if(cell.value === 0){
       this.gameOver = true;
-      this.startTime =true;
+      this.startTime = true;
       clearInterval(this.timeInterval);
     }else {
       this.board.checkMines(cell);
@@ -194,6 +196,8 @@ export class BoardComponent implements OnInit {
     this.gameOver = false;
     this.gameWin = false;
     this.time = 0;
+    this.startTime = true;
+    clearInterval(this.timeInterval);
   }
 
 
