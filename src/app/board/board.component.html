@@ -1,6 +1,8 @@
 
-<table>
+<table *ngIf="gameOver === false">
    <tr *ngFor="let row of board.boardArray">
-     <td *ngFor="let cell of row" (click)="checkCell(cell)" class="cell"></td>
+     <td *ngFor="let cell of row" (click)="checkCell(cell)" class="cell">{{cell.mineCount}}</td>
    </tr>
 </table>
+
+<h2 *ngIf="gameOver">You lost!</h2>

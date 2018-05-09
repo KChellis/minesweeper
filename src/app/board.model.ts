@@ -30,4 +30,39 @@ export class Board {
     }
     console.log(this.boardArray);
   }
+
+  checkMines(cell: Tile){
+    let row = cell.coordinates[0];
+    let col = cell.coordinates[1];
+    let mineCount = 0;
+    if (row === 0 && col === 0){
+
+    }else if (row === 0 && col === this.height-1){
+
+    }else if (row === this.width-1 && col === 0) {
+
+    }else if (row === this.width-1 && col === this.height-1) {
+
+    }else if(row === 0) {
+
+    }else if (row === this.width-1) {
+
+    }else if (col === 0) {
+
+    }else if(col === this.height-1){
+
+    }else {
+      for (let i = row-1; i <= row + 1;  i++){
+        for (let j = col-1; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 0){
+            mineCount++;
+          }
+        }
+      }
+    }
+
+    this.boardArray[row][col].mineCount = mineCount;
+  }
+
+
 }
