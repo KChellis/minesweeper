@@ -6,8 +6,8 @@
 </select>
 
 <div *ngIf="gameOver === false">
-  <p>Mines: {{mines}}</p>
-  <table>
+  <p>Mines: {{mines}}  Time: {{time}}</p>
+  <table (click)="startTimer()" >
     <tr *ngFor="let row of board.boardArray">
       <td *ngFor="let cell of row" (click)="checkCell(cell)" class="cell">{{cell.mineCount}}</td>
     </tr>
