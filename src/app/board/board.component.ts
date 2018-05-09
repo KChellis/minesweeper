@@ -21,6 +21,30 @@ export class BoardComponent implements OnInit {
     this.board = new Board (this.width, this.height, this.mines);
     this.board.makeBoard();
   }
+
+  onChange(difficulty) {
+    if(difficulty === ""){
+      this.width = 8;
+      this.height = 8;
+      this.mines = 10;
+    }else if(difficulty === "1"){
+      this.width = 16;
+      this.height = 16;
+      this.mines = 40;
+    }else if(difficulty === "2"){
+      this.width = 31;
+      this.height = 16;
+      this.mines = 99;
+    }else {
+      this.width = 8;
+      this.height = 8;
+      this.mines = 63;
+    }
+    this.board= new Board(this.width, this.height, this.mines);
+    this.board.makeBoard();
+
+  }
+
   checkAround(cell) {
     let row = cell.coordinates[0];
     let col = cell.coordinates[1];
@@ -119,7 +143,10 @@ export class BoardComponent implements OnInit {
   }
 
   newGame(){
-    location.reload();
+    this.board = new Board (this.width, this.height, this.mines);
+    this.board.makeBoard();
+    this.gameOver = false;
+    this.gameWin = false;
   }
 
 

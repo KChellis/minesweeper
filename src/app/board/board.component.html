@@ -1,8 +1,19 @@
-<table *ngIf="gameOver === false">
-  <tr *ngFor="let row of board.boardArray">
-    <td *ngFor="let cell of row" (click)="checkCell(cell)" class="cell">{{cell.mineCount}}</td>
-  </tr>
-</table>
+<select (change)="onChange($event.target.value)">
+  <option value="">beginner</option>
+  <option value="1">medium</option>
+  <option value="2">hard</option>
+  <option value="3">death</option>
+</select>
+
+<div *ngIf="gameOver === false">
+  <p>Mines: {{mines}}</p>
+  <table>
+    <tr *ngFor="let row of board.boardArray">
+      <td *ngFor="let cell of row" (click)="checkCell(cell)" class="cell">{{cell.mineCount}}</td>
+    </tr>
+  </table>
+</div>
+
 
 <div *ngIf="gameOver">
   <h2 >You lost!</h2>
