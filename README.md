@@ -14,6 +14,13 @@ This app is an attempt at recreating the classic game _minesweeper_.  The user m
   * Clicking a mine ends the game
   * game timer
 
+## Set Up and Installation
+  *
+
+## Known Bugs and issues
+
+
+
 
 ## Development server
 
