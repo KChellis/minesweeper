@@ -32,14 +32,14 @@ export class Board {
   }
 
   checkMines(cell: Tile){
+    cell.mineCount=0;
     let row = cell.coordinates[0];
     let col = cell.coordinates[1];
-    let mineCount = 0;
     if (row === 0 && col === 0){
       for (let i = row; i <= row + 1;  i++){
         for (let j = col; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -47,7 +47,7 @@ export class Board {
       for (let i = row; i <= row + 1;  i++){
         for (let j = col-1; j <= col;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -55,7 +55,7 @@ export class Board {
       for (let i = row-1; i <= row;  i++){
         for (let j = col; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -63,7 +63,7 @@ export class Board {
       for (let i = row-1; i <= row;  i++){
         for (let j = col-1; j <= col;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -72,7 +72,7 @@ export class Board {
       for (let i = row; i <= row + 1;  i++){
         for (let j = col-1; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -81,7 +81,7 @@ export class Board {
       for (let i = row-1; i <= row;  i++){
         for (let j = col-1; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -90,7 +90,7 @@ export class Board {
       for (let i = row-1; i <= row + 1;  i++){
         for (let j = col; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -99,7 +99,7 @@ export class Board {
       for (let i = row-1; i <= row + 1;  i++){
         for (let j = col-1; j <= col;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
@@ -108,13 +108,26 @@ export class Board {
       for (let i = row-1; i <= row + 1;  i++){
         for (let j = col-1; j <= col + 1;  j++){
           if(this.boardArray[i][j].value === 0){
-            mineCount++;
+            cell.mineCount++;
           }
         }
       }
     }
+  }
 
-    this.boardArray[row][col].mineCount = mineCount;
+  checkWin(){
+    for (let i = 0; i < this.width;  i++){
+      for (let j = 0; j < this.height;  j++){
+        if(this.boardArray[i][j].value === 1 && this.boardArray[i][j].mineCount === null){
+          return false;
+        }
+
+      }
+
+    }
+
+    return true;
+
   }
 
 
