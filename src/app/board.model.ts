@@ -115,6 +115,91 @@ export class Board {
     }
   }
 
+  checkAround(cell) {
+    let row = cell.coordinates[0];
+    let col = cell.coordinates[1];
+    if (row === 0 && col === 0){
+      for (let i = row; i <= row + 1;  i++){
+        for (let j = col; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+    }else if (row === 0 && col === this.height-1){
+      for (let i = row; i <= row + 1;  i++){
+        for (let j = col-1; j <= col;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+    }else if (row === this.width-1 && col === 0) {
+      for (let i = row-1; i <= row;  i++){
+        for (let j = col; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+    }else if (row === this.width-1 && col === this.height-1) {
+      for (let i = row-1; i <= row;  i++){
+        for (let j = col-1; j <= col;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+
+    }else if(row === 0) {
+      for (let i = row; i <= row + 1;  i++){
+        for (let j = col-1; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+
+    }else if (row === this.width-1) {
+      for (let i = row-1; i <= row;  i++){
+        for (let j = col-1; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+
+    }else if (col === 0) {
+      for (let i = row-1; i <= row + 1;  i++){
+        for (let j = col; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+
+    }else if(col === this.height-1){
+      for (let i = row-1; i <= row + 1;  i++){
+        for (let j = col-1; j <= col;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+
+    }else {
+      for (let i = row-1; i <= row + 1;  i++){
+        for (let j = col-1; j <= col + 1;  j++){
+          if(this.boardArray[i][j].value === 1){
+            this.checkMines(this.boardArray[i][j]);
+          }
+        }
+      }
+    }
+
+
+  }
+
   checkWin(){
     for (let i = 0; i < this.width;  i++){
       for (let j = 0; j < this.height;  j++){
