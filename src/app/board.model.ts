@@ -28,6 +28,12 @@ export class Board {
         row += 1;
       }
     }
+    for (let i = 0; i < this.height;  i++){
+      for (let j = 0; j < this.width;  j++){
+        this.boardArray[i][j].findSurrounding();
+      }
+    }
+    
     console.log(this.boardArray);
   }
 
