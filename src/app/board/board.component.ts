@@ -98,90 +98,16 @@ export class BoardComponent implements OnInit {
   }
 
   // checkZeros() {
-  //   for (let k = 0; k <= this.height;  k++){
-  //     for (let l = 0; l <= this.width;  l++){
-  //       let currentCell = this.board.boardArray[k][l];
+  //   for (let i = 0; i <= this.height;  i++){
+  //     for (let j = 0; j <= this.width;  j++){
+  //       let currentCell = this.board.boardArray[i][j];
   //       if(currentCell.value === 0){
-  //         let row = currentCell.coordinates[0];
-  //         let col = currentCell.coordinates[1];
-  //         if (row === 0 && col === 0){
-  //           for (let i = row; i <= row + 1;  i++){
-  //             for (let j = col; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
+  //         currentCell.surroundingCells.forEach((tile) => {
+  //           if(tile.mineCount === null){
+  //             return true;
   //           }
-  //         }else if (row === 0 && col === this.height-1){
-  //           for (let i = row; i <= row + 1;  i++){
-  //             for (let j = col-1; j <= col;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //         }else if (row === this.width-1 && col === 0) {
-  //           for (let i = row-1; i <= row;  i++){
-  //             for (let j = col; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //         }else if (row === this.width-1 && col === this.height-1) {
-  //           for (let i = row-1; i <= row;  i++){
-  //             for (let j = col-1; j <= col;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
+  //         });
   //
-  //         }else if(row === 0) {
-  //           for (let i = row; i <= row + 1;  i++){
-  //             for (let j = col-1; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //
-  //         }else if (row === this.width-1) {
-  //           for (let i = row-1; i <= row;  i++){
-  //             for (let j = col-1; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //
-  //         }else if (col === 0) {
-  //           for (let i = row-1; i <= row + 1;  i++){
-  //             for (let j = col; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //
-  //         }else if(col === this.height-1){
-  //           for (let i = row-1; i <= row + 1;  i++){
-  //             for (let j = col-1; j <= col;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //
-  //         }else {
-  //           for (let i = row-1; i <= row + 1;  i++){
-  //             for (let j = col-1; j <= col + 1;  j++){
-  //               if(this.board.boardArray[i][j].mineCount === null){
-  //                 return true;
-  //               }
-  //             }
-  //           }
-  //         }
   //       }
   //
   //     }
